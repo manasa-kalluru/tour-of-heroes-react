@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+/* Application-wide Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 2em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body, input[type="text"], button {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-wrapper {
+  display: flex;
+}
+
+.deleteBtn {
+  border: none;
+  cursor: pointer;
+  color: black;
+  padding:3px;
+  margin: 2px;
+  
+}
+
+.link-button {
+  display: inline-block;
+  padding: 5px 50px;
+  
+  
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin-bottom: 10px;
+  
+}
+
+.link-button-id {
+  display: inline-block;
+  font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #405061;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.linkToBtn {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin:10px;
+}
+
+.linkToBtn:hover {
+background-color: #42545C;
+color: white;
+}
+
+.dropdown {
+  top: 100%;
+  left: 0;
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+}
+
+
+.dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+.dropdown ul li:hover {
+  background-color: #f0f0f0;
+}
+
+
+.highlight {
+  background-color: yellow;
 }

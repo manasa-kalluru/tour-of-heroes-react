@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import HeroList from "./components/HeroList";
+import HeroDetails from "./components/HeroDetails";
+import { useState } from "react";
+import heroesData from "./utils/heroesData";
+import HeroContext from "./utils/HeroContext";
 
-function App() {
+const App = () => {
+  const [heroes, setHeroes] = useState(heroesData);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HeroContext.Provider value={{heroes, setHeroes}}>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </HeroContext.Provider>
   );
-}
+};
+
+export const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+      },
+      {
+        path: "/heroes",
+        element: <HeroList />,
+      },
+      {
+        path: "/detail/:id",
+        element: <HeroDetails />,
+      },
+    ],
+  },
+]);
 
 export default App;
